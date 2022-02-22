@@ -15,7 +15,6 @@
 
 int	main(void)
 {
-	printf("strchr > %s = %s\n", ft_strchr("araiva", 0), strchr("araiva", 0));
-	printf("strrchr = %s.\n", ft_strrchr("", '\0'));
+	printf("strnstr > %s = %s\n", ft_strnstr("lorem ipsum dolor sit amet", "dolor", 15), strnstr("lorem ipsum dolor sit amet", "dolor", 15));
 	return (0);
 }
