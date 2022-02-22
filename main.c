@@ -16,7 +16,7 @@
 int	main(void)
 {
 	printf("x\n");
-	printf("c = %d\n", ft_isalpha('c'));
-	printf("\\n = %d\n", ft_isalpha('\n'));
+	printf("c = %d\n", ft_isprint('c'));
+	printf("\\t = %d\t", ft_isprint('\t'));
 	return (0);
 }
