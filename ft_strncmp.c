@@ -1,20 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsomsa <tsomsa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/22 10:37:38 by tsomsa            #+#    #+#             */
-/*   Updated: 2022/02/22 10:37:43 by tsomsa           ###   ########.fr       */
+/*   Created: 2022/02/22 18:01:32 by tsomsa            #+#    #+#             */
+/*   Updated: 2022/02/22 18:01:34 by tsomsa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
 #include "libft.h"
 
-int	main(void)
+int	ft_strncmp(const char *str1, const char *str2, size_t n)
 {
-	printf("test\\200 == test\\0 ? %d\n", ft_strncmp("test\200", "test\0", 6));
+	while (n > 0)
+	{
+		if (*str2 == '\0')
+			return (1);
+		if (*str1 - *str2 != 0)
+			return (*str1 - *str2);
+		str1++;
+		str2++;
+		n--;
+	}
 	return (0);
 }

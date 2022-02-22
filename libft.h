@@ -23,6 +23,7 @@ int		ft_isalnum(int c);
 int		ft_isascii(int c);
 int		ft_isprint(int c);
 int		ft_strlen(const char *str);
+int		ft_strncmp(const char *str1, const char *str2, size_t n);
 size_t	ft_strlcpy(char *dest, const char *src, size_t size);
 size_t	ft_strlcat(char *dest, char *src, size_t size);
 
