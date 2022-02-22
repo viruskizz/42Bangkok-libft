@@ -9,8 +9,7 @@ $(NAME): $(TARGET)
 	@gcc -c $(CFLAGS) ft_*.c
 	@ar rc $(LIB) ft_*.o
 	@rm ft_*.o
-	@gcc -c $(CFLAGS) $(TARGET)
-	@gcc main.o -I libft.h -L . -lft -o $(NAME)
+	@gcc $(CFLAGS) $(TARGET) -I libft.h -L . -lft -o $(NAME)
 	@./$(NAME)
 
 .PHONY: all clean fclean re
@@ -21,7 +20,7 @@ clean:
 
 fclean: clean
 	@-rm -f $(LIB)
-	@rm -f main.o
+	@-rm -f main.o
 	@-rm -f *.out
 	@echo ".out has cleaned"
 

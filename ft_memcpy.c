@@ -1,24 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsomsa <tsomsa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/22 10:37:38 by tsomsa            #+#    #+#             */
-/*   Updated: 2022/02/22 10:37:43 by tsomsa           ###   ########.fr       */
+/*   Created: 2022/02/22 15:10:27 by tsomsa            #+#    #+#             */
+/*   Updated: 2022/02/22 15:10:30 by tsomsa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
 #include "libft.h"
 
-int	main(void)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	char	str[100];
-	int		r;
+	unsigned int	i;
+	char			*buf;
+	char			*temp;
 
-	r = ft_strlcpy(str, "lorem", 15);
-	printf("strlcpy [%d] = %s\n", r, str);
-	return (0);
+	i = 0;
+	buf = (char *) dest;
+	temp = (char *) src;
+	while (i < n)
+	{
+		*buf++ = *temp++;
+		i++;
+	}
+	return (dest);
 }

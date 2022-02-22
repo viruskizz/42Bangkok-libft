@@ -1,24 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsomsa <tsomsa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/22 10:37:38 by tsomsa            #+#    #+#             */
-/*   Updated: 2022/02/22 10:37:43 by tsomsa           ###   ########.fr       */
+/*   Created: 2022/02/22 14:58:10 by tsomsa            #+#    #+#             */
+/*   Updated: 2022/02/22 14:58:15 by tsomsa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
 #include "libft.h"
 
-int	main(void)
+void	*ft_memset(void *str, int c, size_t n)
 {
-	char	str[100];
-	int		r;
+	unsigned int	i;
+	char			*buf;
 
-	r = ft_strlcpy(str, "lorem", 15);
-	printf("strlcpy [%d] = %s\n", r, str);
-	return (0);
+	i = 0;
+	buf = str;
+	while (i < n)
+	{
+		buf[i] = c;
+		i++;
+	}
+	return (str);
 }

@@ -1,24 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsomsa <tsomsa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/22 10:37:38 by tsomsa            #+#    #+#             */
-/*   Updated: 2022/02/22 10:37:43 by tsomsa           ###   ########.fr       */
+/*   Created: 2022/02/22 14:50:37 by tsomsa            #+#    #+#             */
+/*   Updated: 2022/02/22 14:51:35 by tsomsa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
 #include "libft.h"
 
-int	main(void)
+int	ft_strlen(const char *str)
 {
-	char	str[100];
-	int		r;
+	int	i;
 
-	r = ft_strlcpy(str, "lorem", 15);
-	printf("strlcpy [%d] = %s\n", r, str);
-	return (0);
+	i = 0;
+	while (*str++ != '\0')
+		i++;
+	return (i);
 }

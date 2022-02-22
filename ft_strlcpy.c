@@ -1,24 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsomsa <tsomsa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/22 10:37:38 by tsomsa            #+#    #+#             */
-/*   Updated: 2022/02/22 10:37:43 by tsomsa           ###   ########.fr       */
+/*   Created: 2022/02/22 16:45:43 by tsomsa            #+#    #+#             */
+/*   Updated: 2022/02/22 16:45:47 by tsomsa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libft.h"
 
-int	main(void)
+size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
-	char	str[100];
-	int		r;
+	int		srclen;
 
-	r = ft_strlcpy(str, "lorem", 15);
-	printf("strlcpy [%d] = %s\n", r, str);
-	return (0);
+	srclen = ft_strlen(src);
+	if (size == 0)
+		return (srclen);
+	if (srclen <= (int) size)
+		ft_memcpy(dest, src, srclen + 1);
+	else
+	{
+		ft_memcpy(dest, src, size - 1);
+		dest[size - 1] = '\0';
+	}
+	return (srclen);
 }

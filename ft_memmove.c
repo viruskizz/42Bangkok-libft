@@ -1,24 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsomsa <tsomsa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/22 10:37:38 by tsomsa            #+#    #+#             */
-/*   Updated: 2022/02/22 10:37:43 by tsomsa           ###   ########.fr       */
+/*   Created: 2022/02/22 15:44:44 by tsomsa            #+#    #+#             */
+/*   Updated: 2022/02/22 15:44:46 by tsomsa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libft.h"
 
-int	main(void)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	char	str[100];
-	int		r;
+	unsigned int	i;
+	char			*cdest;
+	char			*csrc;
+	char			*temp;
 
-	r = ft_strlcpy(str, "lorem", 15);
-	printf("strlcpy [%d] = %s\n", r, str);
-	return (0);
+	cdest = (char *) dest;
+	csrc = (char *) src;
+	temp = malloc(sizeof(char) * n);
+	i = 0;
+	while (i < n)
+	{
+		temp[i] = csrc[i];
+		i++;
+	}
+	i = 0;
+	while (i < n)
+	{
+		cdest[i] = temp[i];
+		i++;
+	}
+	return (dest);
 }
