@@ -10,11 +10,21 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libft.h"
+#include <string.h>
 
 int	main(void)
 {
-	printf("strnstr = %s\n", ft_strnstr("lorem ipsum dolor sit amet", "consectetur", 30));
+	printf("A => %c\n", ft_toupper('a'));
+	printf("a => %c\n", ft_tolower('A'));
+	printf("abc = abc ? %d\n", ft_memcmp("abc", "abc", 5));
+	printf("strchr = %s\n", ft_strchr("araiva.com", 'i'));
+	printf("strchr = %s\n", ft_strchr("araiva.com", 'z'));
+	printf("strchr = %s.\n", ft_strchr("", '\0'));
+	printf("strchr = %s.\n", strchr("", '\0'));
+	printf("strrchr = %s\n", ft_strrchr("araiva.com", '.'));
+	printf("strrchr = %s\n", ft_strrchr("araiva.com", 'z'));
+	printf("strrchr = %s.\n", ft_strrchr("", '\0'));
+	printf("strrchr = %s.\n", strrchr("", '\0'));
 	return (0);
 }
