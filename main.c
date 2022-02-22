@@ -15,6 +15,6 @@
 
 int	main(void)
 {
-	printf("test\\200 == test\\0 ? %d\n", ft_strncmp("test\200", "test\0", 6));
+	printf("strnstr = %s\n", ft_strnstr("lorem ipsum dolor sit amet", "consectetur", 30));
 	return (0);
 }
