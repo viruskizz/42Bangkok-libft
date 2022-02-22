@@ -12,6 +12,8 @@
 
 #include "libft.h"
 
+static void	my_cp(char *d, const char *s, int n);
+
 size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
 	int		srclen;
@@ -20,11 +22,17 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 	if (size == 0)
 		return (srclen);
 	if (srclen <= (int) size)
-		ft_memcpy(dest, src, srclen + 1);
+		my_cp(dest, src, srclen + 1);
 	else
 	{
-		ft_memcpy(dest, src, size - 1);
+		my_cp(dest, src, size - 1);
 		dest[size - 1] = '\0';
 	}
 	return (srclen);
+}
+
+static	void	my_cp(char *d, const char *s, int n)
+{
+	while (n-- > 0)
+		*d++ = *s++;
 }
