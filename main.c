@@ -15,10 +15,10 @@
 
 int	main(void)
 {
-	char	str[100];
+	char	str[10] = "a";
 	int		r;
 
-	r = ft_strlcpy(str, "lorem", 15);
-	printf("strlcpy [%d] = %s\n", r, str);
+	r = ft_strlcat(str, "lorem ipsum dolor sit amet", 0);
+	printf("strlcat[%d] = %s\n", r, str);
 	return (0);
 }
