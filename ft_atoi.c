@@ -1,18 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsomsa <tsomsa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/22 10:34:11 by tsomsa            #+#    #+#             */
-/*   Updated: 2022/02/22 10:34:13 by tsomsa           ###   ########.fr       */
+/*   Created: 2022/02/22 13:06:01 by tsomsa            #+#    #+#             */
+/*   Updated: 2022/02/22 13:12:25 by tsomsa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-int	ft_isalnum(int c)
+int	ft_atoi(const char *nb)
 {
-	return ((c >= '0' && c <= '9')
-		|| (c >= 'a' && c <= 'z')
-		|| (c >= 'A' && c <= 'Z'));
+	int	prefix;
+	int	number;
+
+	number = 0;
+	if (*nb == '\0' || *nb == '\e')
+		return (0);
+	while (*nb <= 32)
+		nb++;
+	if (*nb == '-')
+		prefix = -1;
+	else
+		prefix = 1;
+	if (*nb == '-' || *nb == '+')
+		nb++;
+	while (ft_isdigit(*nb))
+		number = (number * 10) + (*nb++ - '0');
+	return (prefix * number);
 }

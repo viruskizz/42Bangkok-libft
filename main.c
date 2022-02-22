@@ -15,8 +15,7 @@
 
 int	main(void)
 {
-	printf("x\n");
-	printf("c = %d\n", ft_isprint('c'));
-	printf("\\t = %d\t", ft_isprint('\t'));
+	printf("\e475 = %d\n", ft_atoi("\\e475"));
+	printf("'' = %d\n", ft_atoi(""));
 	return (0);
 }

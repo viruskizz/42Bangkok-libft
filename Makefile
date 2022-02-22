@@ -21,7 +21,7 @@ clean:
 
 fclean: clean
 	@-rm -f $(LIB)
-	@-rm -f main.o
+	@rm -f main.o
 	@-rm -f *.out
 	@echo ".out has cleaned"
 
