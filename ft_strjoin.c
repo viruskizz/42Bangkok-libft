@@ -1,23 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsomsa <tsomsa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/22 10:37:38 by tsomsa            #+#    #+#             */
-/*   Updated: 2022/02/22 10:37:43 by tsomsa           ###   ########.fr       */
+/*   Created: 2022/02/23 21:44:54 by tsomsa            #+#    #+#             */
+/*   Updated: 2022/02/23 21:44:56 by tsomsa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	main(void)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	printf("substr => %s\n", ft_substr("araiva", 500, 2));
-	char	**arr = ft_split("   a111    b222    c333", ' ');
-	printf("%s,%s,%s\n", arr[0], arr[1], arr[2]);
-	// char	**arr = ft_split("    xx xx   ii  ii   aa bbb", ' ');
-	// printf("%s,%s,%s\n", arr[0], arr[1], arr[5]);
-	return (0);
+	char	*str;
+	int		i;
+	int		len1;
+	int		len2;
+
+	i = 0;
+	len1 = ft_strlen(s1);
+	len2 = ft_strlen(s2);
+	str = malloc(sizeof len1 + len2 + 1);
+	while (i < len1)
+		str[i++] = *s1++;
+	while (i < len1 + len2)
+		str[i++] = *s2++;
+	str[i] = '\0';
+	return (str);
 }
