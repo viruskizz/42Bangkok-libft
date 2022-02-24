@@ -15,6 +15,7 @@
 
 int	main(void)
 {
-	printf("\"\" = %s\n", ft_substr("tripouille", 100, 1));
+	char	s[] = "";
+	printf("%s\n", ft_strdup(s));
 	return (0);
 }
