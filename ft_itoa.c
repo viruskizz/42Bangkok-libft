@@ -31,7 +31,6 @@ char	*ft_itoa(int n)
 		str = malloc(sizeof(char) * m + 1);
 		str[0] = '-';
 	}
-	//printf("x = %ld\n", x);
 	str[m--] = '\0';
 	if (x == 0)
 		str[0] = '0';
