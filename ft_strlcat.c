@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-static void	my_cp(char *d, const char *s, int n);
+static void	my_cp(char *d, char *s, size_t n);
 
 size_t	ft_strlcat(char *dest, char *src, size_t size)
 {
@@ -22,7 +22,7 @@ size_t	ft_strlcat(char *dest, char *src, size_t size)
 	destlen = ft_strlen(dest);
 	if (destlen >= size)
 		return (size + srclen);
-	if (srclen + destlen <= size)
+	if (srclen + destlen < size)
 		my_cp(dest + destlen, src, srclen + 1);
 	else
 	{
@@ -32,7 +32,7 @@ size_t	ft_strlcat(char *dest, char *src, size_t size)
 	return (srclen + destlen);
 }
 
-static	void	my_cp(char *d, const char *s, int n)
+static	void	my_cp(char *d, char *s, size_t n)
 {
 	while (n-- > 0)
 		*d++ = *s++;

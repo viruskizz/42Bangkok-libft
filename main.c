@@ -11,8 +11,10 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <string.h>
 
 int	main(void)
 {
+	printf("\"\" = %s\n", ft_substr("tripouille", 100, 1));
 	return (0);
 }
