@@ -11,9 +11,9 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-static void	my_cp(char *d, char *s, size_t n);
+static void	my_cp(char *d, const char *s, size_t n);
 
-size_t	ft_strlcat(char *dest, char *src, size_t size)
+size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
 	size_t	srclen;
 	size_t	destlen;
@@ -32,7 +32,7 @@ size_t	ft_strlcat(char *dest, char *src, size_t size)
 	return (srclen + destlen);
 }
 
-static	void	my_cp(char *d, char *s, size_t n)
+static	void	my_cp(char *d, const char *s, size_t n)
 {
 	while (n-- > 0)
 		*d++ = *s++;
