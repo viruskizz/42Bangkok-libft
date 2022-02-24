@@ -14,10 +14,7 @@
 
 int	main(void)
 {
-	printf("substr => %s\n", ft_substr("araiva", 500, 2));
-	char	**arr = ft_split("   a111    b222    c333", ' ');
-	printf("%s,%s,%s\n", arr[0], arr[1], arr[2]);
-	// char	**arr = ft_split("    xx xx   ii  ii   aa bbb", ' ');
-	// printf("%s,%s,%s\n", arr[0], arr[1], arr[5]);
+	printf("itoa: -3648 = %s\n", ft_itoa(-3648));
+	printf("itoa: -2147483648LL = %s\n", ft_itoa(-2147483648LL));
 	return (0);
 }
