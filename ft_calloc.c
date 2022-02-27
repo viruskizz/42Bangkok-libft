@@ -14,7 +14,12 @@
 
 void	*ft_calloc(size_t n, size_t size)
 {
+	void	*buf;
+
 	if (n == 0 || size == 0)
 		return (NULL);
-	return (malloc(n * size));
+	buf = malloc(n * size);
+	if (buf)
+		ft_bzero(buf, n);
+	return (buf);
 }
