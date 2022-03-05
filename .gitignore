@@ -1,5 +1,7 @@
 .vscode
+.gitignore
 *test*
 *.o
 *.out
 libft.a
+main.c
