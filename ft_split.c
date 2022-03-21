@@ -26,19 +26,19 @@ char	**ft_split(char const *s, char c)
 	int		slen;
 
 	slen = ft_strlen(s);
-	// printf("[%d] %c: %s\n", fitlen(s, c), c, s + 1);
-	if (!(arr = malloc(sizeof(char *) * fitlen(s, c))))
+	arr = malloc(sizeof(char *) * (fitlen(s, c) + 1));
+	if (!arr)
 		return (NULL);
 	i = 0;
 	j = detlen(&s[0], c);
 	while (s[j] && j <= slen)
 	{
 		len = setlen(&s[j], c);
-		if (!(arr[i] = malloc(sizeof(char) * len + 1)))
+		arr[i] = malloc(sizeof(char) * len + 1);
+		if (!arr[i])
 			return (NULL);
 		*arr[i] = 0;
 		arr[i] = setstr(arr[i], &s[j], len);
-		// printf("%d:%s(%d)\n", i, arr[i], len);
 		i++;
 		j += len + detlen(&s[j + len], c);
 	}
