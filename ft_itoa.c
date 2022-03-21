@@ -13,6 +13,7 @@
 #include "libft.h"
 
 static int	count_pos(long n);
+static char	*create_number(char *str, long x, int m);
 
 char	*ft_itoa(int n)
 {
@@ -25,12 +26,21 @@ char	*ft_itoa(int n)
 	if (n >= 0)
 		str = malloc(sizeof(char) * m + 1);
 	else
+		str = malloc(sizeof(char) * ++m + 1);
+	if (!str)
+		return (NULL);
+	str[0] = 0;
+	if (n < 0)
 	{
-		m += 1;
-		x = x * -1;
-		str = malloc(sizeof(char) * m + 1);
 		str[0] = '-';
+		x = x * -1;
 	}
+	str = create_number(str, x, m);
+	return (str);
+}
+
+static char	*create_number(char *str, long x, int m)
+{
 	str[m--] = '\0';
 	if (x == 0)
 		str[0] = '0';
